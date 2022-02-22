@@ -18,7 +18,7 @@ public class FuncionariosController {
 
     @GetMapping
     public List<FuncionariosEntity> findAll(){
-        this.funcionariosRepository.findAll();
+        return this.funcionariosRepository.findAll();
     }
 
     @GetMapping("/{id")
