@@ -25,6 +25,11 @@ public class PacientesContoller {
     public PacientesEntity findById(@PathVariable("id") final Long id){
         return this.pacientesRepository.findById(id).orElse(null);
     }
+    @GetMapping
+    public List<PacientesEntity> findByName(String nome){
+        return this.pacientesRepository.findByName(nome);
+    }
+
 
     @GetMapping
     public void novoPaciente(@RequestBody final PacientesEntity pacientes){
