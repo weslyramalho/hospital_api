@@ -1,6 +1,8 @@
 package controllers;
 
 import entities.PacientesEntity;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 import repositories.PacientesRepository;
 
@@ -17,8 +19,10 @@ public class PacientesContoller {
     }
 
     @GetMapping
-    public List<PacientesEntity> findAll(){
-        return this.pacientesRepository.findAll();
+    public List<PacientesEntity> findAll(@RequestParam("page") Integer page, @RequestParam("pageSize") Integer pageSize){
+        return this.pacientesRepository.findAll(PageRequest.of(page, pageSize,
+                Sort.by("id")))
+                .stream().toList();
     }
 
     @GetMapping("/{id}")

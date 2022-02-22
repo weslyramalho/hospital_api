@@ -13,10 +13,10 @@ public class PacientesEntity {
     private Long id;
 
     @Column(name = "nome", nullable = false)
-    private Long nome;
+    private String nome;
 
-    @Column(name = "data_de_nascimento", nullable = false)
-    private Date data_de_nascimentoicula;
+    @Column(name = "nascimento", nullable = false)
+    private Date nascimento;
 
     @Column(name = "telefone", nullable = false)
     private String telefone;
@@ -24,10 +24,10 @@ public class PacientesEntity {
     public PacientesEntity() {
     }
 
-    public PacientesEntity(Long id, Long nome, Date data_de_nascimentoicula, String telefone) {
+    public PacientesEntity(Long id, String nome, Date nascimento, String telefone) {
         this.id = id;
         this.nome = nome;
-        this.data_de_nascimentoicula = data_de_nascimentoicula;
+        this.nascimento = nascimento;
         this.telefone = telefone;
     }
 
@@ -39,20 +39,20 @@ public class PacientesEntity {
         this.id = id;
     }
 
-    public Long getNome() {
+    public String getNome() {
         return nome;
     }
 
-    public void setNome(Long nome) {
+    public void setNome(String nome) {
         this.nome = nome;
     }
 
-    public Date getData_de_nascimentoicula() {
-        return data_de_nascimentoicula;
+    public Date getNascimento() {
+        return nascimento;
     }
 
-    public void setData_de_nascimentoicula(Date data_de_nascimentoicula) {
-        this.data_de_nascimentoicula = data_de_nascimentoicula;
+    public void setNascimento(Date nascimento) {
+        this.nascimento = nascimento;
     }
 
     public String getTelefone() {
